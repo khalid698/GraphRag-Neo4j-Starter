@@ -1,0 +1,47 @@
+# Logs
+logs/
+*.log
+*.out
+*.err
+
+# IDEs/editors
+.idea/
+.project
+.classpath
+.settings/
+.factorypath
+*.iml
+.vscode/
+
+# Build outputs
+target/
+build/
+.gradle/
+out/
+
+# Maven
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Dependency caches
+.mvn/
+node_modules/
+
+# Test containers / docker
+*.pid
+
+# Local env/config
+.env
+*.local
+*.swp
+
+neo4j/
+docker-compose.yml
+

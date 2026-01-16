@@ -1,0 +1,1 @@
+MATCH (m:Module)-[:CONTAINS]->(t:Type) RETURN m.name, t.fqcn LIMIT 25;

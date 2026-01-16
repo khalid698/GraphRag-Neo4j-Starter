@@ -1,0 +1,4 @@
+CALL db.index.vector.queryNodes('chunk_embedding_idx', $topK, $embedding) YIELD node, score
+WHERE $module IS NULL OR node.module = $module
+RETURN node, score
+ORDER BY score DESC

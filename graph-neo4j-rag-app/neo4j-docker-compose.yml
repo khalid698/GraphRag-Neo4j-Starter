@@ -1,0 +1,22 @@
+services:
+  neo4j:
+    image: neo4j:latest
+    volumes:
+      # Mount local directories to store logs, config, data, and plugins persistently
+      - ./neo4j/logs:/logs
+      - ./neo4j/config:/config
+      - ./neo4j/data:/data
+      - ./neo4j/plugins:/plugins
+    environment:
+      # Set the default username and password for authentication
+      - NEO4J_AUTH=neo4j/password
+      - NEO4J_apoc_export_file_enabled=true
+      - NEO4J_apoc_import_file_enabled=true
+      - NEO4J_apoc_import_file_use__neo4j__config=true
+      - NEO4JLABS_PLUGINS=\[\"apoc\"\]
+    ports:
+      # Map the browser/HTTP port
+      - "7474:7474"
+      # Map the Bolt port for drivers/applications
+      - "7687:7687"
+    restart: always
